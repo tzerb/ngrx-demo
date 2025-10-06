@@ -1,0 +1,24 @@
+<div class="counter-container">
+  <h2>NgRx Counter Example</h2>
+
+  <div class="counter-display">
+    <h3>Count: {{ count$ | async }}</h3>
+    @if (isEven$ | async) {
+      <p class="info">The count is even</p>
+    }
+    @if (isPositive$ | async) {
+      <p class="info">The count is positive</p>
+    }
+  </div>
+
+  <div class="button-group">
+    <button (click)="decrement()">-1</button>
+    <button (click)="reset()">Reset</button>
+    <button (click)="increment()">+1</button>
+    <button (click)="openCustomIncrement()">Custom</button>
+  </div>
+
+  @if (showModal$ | async) {
+    <app-counter-input-modal></app-counter-input-modal>
+  }
+</div>

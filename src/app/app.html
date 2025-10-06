@@ -1,0 +1,27 @@
+<div class="app-container">
+  <header>
+    <h1>{{ title() }} - NgRx State Management Demo</h1>
+  </header>
+
+  <main>
+    <div class="demo-section full-width">
+      <app-counter></app-counter>
+    </div>
+
+    <div class="split-section">
+      <div class="demo-section left-panel">
+        <app-user-list></app-user-list>
+      </div>
+
+      <div class="demo-section right-panel">
+        <app-user-summary></app-user-summary>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>Open Redux DevTools to inspect the state</p>
+  </footer>
+</div>
+
+<router-outlet />

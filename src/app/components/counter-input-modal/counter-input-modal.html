@@ -1,0 +1,31 @@
+<div class="modal-overlay" (click)="onClose()">
+  <div class="modal-content" (click)="$event.stopPropagation()">
+    <div class="modal-header">
+      <h2>Custom Increment</h2>
+      <button class="close-btn" (click)="onClose()">&times;</button>
+    </div>
+
+    <form (ngSubmit)="onSubmit()" class="modal-body">
+      <div class="form-group">
+        <label for="amount">Enter amount to increment by:</label>
+        <input
+          id="amount"
+          type="number"
+          [(ngModel)]="amount"
+          name="amount"
+          placeholder="Enter a number"
+          required
+          autofocus
+        />
+        <p class="hint">Use negative numbers to decrement</p>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="cancel-btn" (click)="onClose()">Cancel</button>
+        <button type="submit" class="submit-btn" [disabled]="amount === null || amount === 0">
+          Apply
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

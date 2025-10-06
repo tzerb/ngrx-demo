@@ -1,0 +1,28 @@
+<div class="user-summary-container">
+  <div class="summary-header">
+    <h2>User Directory</h2>
+    <div class="user-count">
+      <span class="count-badge">{{ userCount$ | async }}</span>
+      <span class="count-label">Total Users</span>
+    </div>
+  </div>
+
+  <div class="user-list">
+    @for (user of users$ | async; track user.id) {
+      <div class="user-item">
+        <div class="user-avatar">{{ getInitials(user.name) }}</div>
+        <div class="user-info">
+          <div class="user-name">{{ user.name }}</div>
+          <div class="user-email">{{ user.email }}</div>
+        </div>
+        <div class="user-number">#{{ user.id }}</div>
+      </div>
+    }
+
+    @if ((userCount$ | async) === 0) {
+      <div class="empty-state">
+        <p>No users in directory</p>
+      </div>
+    }
+  </div>
+</div>

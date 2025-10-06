@@ -1,0 +1,36 @@
+<div class="user-list-container">
+  <div class="header-section">
+    <h2>NgRx Users Example (with Effects)</h2>
+    <button class="add-user-btn" (click)="openModal()">+ Add User</button>
+  </div>
+
+  @if (loading$ | async) {
+    <div class="loading">Loading users...</div>
+  }
+
+  @if (error$ | async; as error) {
+    <div class="error">
+      Error: {{ error }}
+    </div>
+  }
+
+  <div class="users">
+    @for (user of users$ | async; track user.id) {
+      <div class="user-card">
+        <h3>{{ user.name }}</h3>
+        <p>{{ user.email }}</p>
+        <button (click)="deleteUser(user.id)" class="delete-btn">Delete</button>
+      </div>
+    }
+  </div>
+
+  @if ((users$ | async)?.length === 0 && !(loading$ | async)) {
+    <div class="empty">
+      No users found
+    </div>
+  }
+
+  @if (showModal$ | async) {
+    <app-add-user-modal></app-add-user-modal>
+  }
+</div>

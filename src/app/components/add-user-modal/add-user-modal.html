@@ -1,0 +1,49 @@
+<div class="modal-overlay" (click)="onClose()">
+  <div class="modal-content" (click)="$event.stopPropagation()">
+    <div class="modal-header">
+      <h2>Add New User</h2>
+      <button class="close-btn" (click)="onClose()">&times;</button>
+    </div>
+
+    <form (ngSubmit)="onSubmit()" class="modal-body">
+      @if (errorMessage$ | async; as errorMessage) {
+        <div class="error-message">
+          {{ errorMessage }}
+        </div>
+      }
+
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input
+          id="name"
+          type="text"
+          [(ngModel)]="name"
+          name="name"
+          placeholder="Enter name"
+          required
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input
+          id="email"
+          type="email"
+          [(ngModel)]="email"
+          (ngModelChange)="onEmailChange()"
+          name="email"
+          placeholder="Enter email"
+          required
+          [class.error-input]="errorMessage$ | async"
+        />
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="cancel-btn" (click)="onClose()">Cancel</button>
+        <button type="submit" class="submit-btn" [disabled]="!name.trim() || !email.trim()">
+          Add User
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

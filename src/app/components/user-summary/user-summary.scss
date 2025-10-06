@@ -1,0 +1,120 @@
+.user-summary-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  .summary-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #e0e0e0;
+
+    h2 {
+      margin: 0;
+      color: #444;
+    }
+
+    .user-count {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 5px;
+
+      .count-badge {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 8px 16px;
+        border-radius: 20px;
+        font-size: 1.2rem;
+        font-weight: bold;
+        min-width: 40px;
+        text-align: center;
+      }
+
+      .count-label {
+        font-size: 0.75rem;
+        color: #666;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+    }
+  }
+
+  .user-list {
+    flex: 1;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    .user-item {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      padding: 15px;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+      transition: all 0.3s;
+
+      &:hover {
+        transform: translateX(5px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
+      }
+
+      .user-avatar {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        font-size: 1.1rem;
+        flex-shrink: 0;
+      }
+
+      .user-info {
+        flex: 1;
+        min-width: 0;
+
+        .user-name {
+          font-weight: 600;
+          color: #333;
+          margin-bottom: 4px;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+
+        .user-email {
+          font-size: 0.85rem;
+          color: #666;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+      }
+
+      .user-number {
+        color: #999;
+        font-size: 0.9rem;
+        font-weight: 500;
+        flex-shrink: 0;
+      }
+    }
+
+    .empty-state {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 200px;
+      color: #999;
+      font-style: italic;
+    }
+  }
+}
