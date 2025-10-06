@@ -1,6 +1,15 @@
-<div class="app-container">
+<div class="app-container" [class.dark-mode]="darkMode$ | async">
   <header>
-    <h1>{{ title() }} - NgRx State Management Demo</h1>
+    <div class="header-content">
+      <h1>{{ title() }} - NgRx State Management Demo</h1>
+      <button class="dark-mode-toggle" (click)="toggleDarkMode()">
+        @if (darkMode$ | async) {
+          ☀️ Light Mode
+        } @else {
+          🌙 Dark Mode
+        }
+      </button>
+    </div>
   </header>
 
   <main>

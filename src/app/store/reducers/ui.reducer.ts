@@ -5,7 +5,8 @@ import * as UIActions from '../actions/ui.actions';
 export const initialState: UIState = {
   showAddUserModal: false,
   modalError: null,
-  showCounterModal: false
+  showCounterModal: false,
+  darkMode: false
 };
 
 export const uiReducer = createReducer(
@@ -35,5 +36,9 @@ export const uiReducer = createReducer(
   on(UIActions.closeCounterModal, (state) => ({
     ...state,
     showCounterModal: false
+  })),
+  on(UIActions.toggleDarkMode, (state) => ({
+    ...state,
+    darkMode: !state.darkMode
   }))
 );

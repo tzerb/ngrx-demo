@@ -12,11 +12,11 @@
 }
 
 .modal-content {
-  background: white;
+  background: var(--bg-card);
   border-radius: 8px;
   width: 90%;
   max-width: 400px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 20px var(--shadow-lg);
   animation: slideIn 0.3s ease-out;
 }
 
@@ -36,11 +36,11 @@
   justify-content: space-between;
   align-items: center;
   padding: 20px;
-  border-bottom: 1px solid #e0e0e0;
+  border-bottom: 1px solid var(--border-color);
 
   h2 {
     margin: 0;
-    color: #333;
+    color: var(--text-primary);
     font-size: 1.5rem;
   }
 
@@ -48,7 +48,7 @@
     background: none;
     border: none;
     font-size: 2rem;
-    color: #666;
+    color: var(--text-secondary);
     cursor: pointer;
     padding: 0;
     width: 30px;
@@ -59,7 +59,7 @@
     transition: color 0.3s;
 
     &:hover {
-      color: #333;
+      color: var(--text-primary);
     }
   }
 }
@@ -73,7 +73,7 @@
     label {
       display: block;
       margin-bottom: 8px;
-      color: #555;
+      color: var(--text-secondary);
       font-weight: 500;
     }
 
@@ -86,6 +86,8 @@
       box-sizing: border-box;
       transition: border-color 0.3s;
       text-align: center;
+      background: var(--bg-card);
+      color: var(--text-primary);
 
       &:focus {
         outline: none;
@@ -93,7 +95,7 @@
       }
 
       &::placeholder {
-        color: #999;
+        color: var(--text-tertiary);
       }
 
       /* Remove spinner arrows in number input */
@@ -111,7 +113,7 @@
     .hint {
       margin-top: 8px;
       font-size: 0.85rem;
-      color: #666;
+      color: var(--text-secondary);
       font-style: italic;
     }
   }

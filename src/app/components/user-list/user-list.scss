@@ -7,7 +7,7 @@
 
     h2 {
       margin: 0;
-      color: #444;
+      color: var(--text-primary);
     }
 
     .add-user-btn {
@@ -33,7 +33,7 @@
   .loading {
     text-align: center;
     padding: 20px;
-    color: #666;
+    color: var(--text-secondary);
   }
 
   .error {
@@ -52,25 +52,25 @@
   }
 
   .user-card {
-    background: white;
+    background: var(--bg-card);
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px var(--shadow-sm);
     transition: transform 0.2s;
 
     &:hover {
       transform: translateY(-2px);
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+      box-shadow: 0 4px 8px var(--shadow-md);
     }
 
     h3 {
       margin: 0 0 10px 0;
-      color: #333;
+      color: var(--text-primary);
     }
 
     p {
       margin: 0 0 15px 0;
-      color: #666;
+      color: var(--text-secondary);
       font-size: 0.9rem;
     }
 
@@ -97,6 +97,6 @@
   .empty {
     text-align: center;
     padding: 40px;
-    color: #999;
+    color: var(--text-tertiary);
   }
 }

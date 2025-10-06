@@ -17,3 +17,8 @@ export const selectShowCounterModal = createSelector(
   selectUIState,
   (state: UIState) => state.showCounterModal
 );
+
+export const selectDarkMode = createSelector(
+  selectUIState,
+  (state: UIState) => state.darkMode
+);
