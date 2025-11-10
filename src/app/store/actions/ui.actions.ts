@@ -14,3 +14,5 @@ export const clearModalError = createAction('[UI] Clear Modal Error');
 export const openCounterModal = createAction('[UI] Open Counter Modal');
 
 export const closeCounterModal = createAction('[UI] Close Counter Modal');
+
+export const toggleDarkMode = createAction('[UI] Toggle Dark Mode');

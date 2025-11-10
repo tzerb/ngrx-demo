@@ -9,11 +9,11 @@
     align-items: center;
     margin-bottom: 20px;
     padding-bottom: 15px;
-    border-bottom: 2px solid #e0e0e0;
+    border-bottom: 2px solid var(--border-color);
 
     h2 {
       margin: 0;
-      color: #444;
+      color: var(--text-primary);
     }
 
     .user-count {
@@ -35,7 +35,7 @@
 
       .count-label {
         font-size: 0.75rem;
-        color: #666;
+        color: var(--text-secondary);
         text-transform: uppercase;
         letter-spacing: 0.5px;
       }
@@ -54,14 +54,14 @@
       align-items: center;
       gap: 15px;
       padding: 15px;
-      background: white;
+      background: var(--bg-card);
       border-radius: 8px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+      box-shadow: 0 2px 4px var(--shadow-sm);
       transition: all 0.3s;
 
       &:hover {
         transform: translateX(5px);
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
+        box-shadow: 0 4px 8px var(--shadow-md);
       }
 
       .user-avatar {
@@ -84,7 +84,7 @@
 
         .user-name {
           font-weight: 600;
-          color: #333;
+          color: var(--text-primary);
           margin-bottom: 4px;
           white-space: nowrap;
           overflow: hidden;
@@ -93,7 +93,7 @@
 
         .user-email {
           font-size: 0.85rem;
-          color: #666;
+          color: var(--text-secondary);
           white-space: nowrap;
           overflow: hidden;
           text-overflow: ellipsis;
@@ -101,7 +101,7 @@
       }
 
       .user-number {
-        color: #999;
+        color: var(--text-tertiary);
         font-size: 0.9rem;
         font-weight: 500;
         flex-shrink: 0;
@@ -113,7 +113,7 @@
       align-items: center;
       justify-content: center;
       height: 200px;
-      color: #999;
+      color: var(--text-tertiary);
       font-style: italic;
     }
   }

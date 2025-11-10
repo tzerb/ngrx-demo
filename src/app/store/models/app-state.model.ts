@@ -20,4 +20,5 @@ export interface UIState {
   showAddUserModal: boolean;
   modalError: string | null;
   showCounterModal: boolean;
+  darkMode: boolean;
 }

@@ -1,7 +1,7 @@
 .counter-container {
   h2 {
     margin-bottom: 20px;
-    color: #444;
+    color: var(--text-primary);
   }
 
   .counter-display {
@@ -15,7 +15,7 @@
     }
 
     .info {
-      color: #666;
+      color: var(--text-secondary);
       font-size: 0.9rem;
       margin: 5px 0;
     }
