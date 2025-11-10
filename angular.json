@@ -5,6 +5,13 @@
   "projects": {
     "ngrx-demo": {
       "projectType": "application",
+      "architect": {
+        "build": {
+          "options": {
+            "outputPath": "dist/frontend"
+          }
+        }
+      }      
       "schematics": {
         "@schematics/angular:component": {
           "style": "scss"
