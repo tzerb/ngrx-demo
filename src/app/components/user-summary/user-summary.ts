@@ -22,11 +22,19 @@ export class UserSummaryComponent {
   }
 
   getInitials(name: string): string {
-    return name
-      .split(' ')
-      .map(n => n[0])
-      .join('')
-      .toUpperCase()
-      .slice(0, 2);
+    const initials = name
+      .split(/\s+/)
+      .filter(n => n.length > 0)
+      .map(n => {
+        // Use Array.from or spread operator to handle multi-byte characters like emojis
+        const chars = Array.from(n);
+        const char = chars[0] || '';
+        // Only uppercase if it's a letter (ASCII or extended)
+        return /^[a-z]$/i.test(char) ? char.toUpperCase() : char;
+      })
+      .join('');
+
+    // Use Array.from to ensure we slice by Unicode characters, not code units
+    return Array.from(initials).slice(0, 2).join('');
   }
 }
