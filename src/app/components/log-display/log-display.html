@@ -1,0 +1,29 @@
+<div class="log-display-container">
+  <div class="log-header">
+    <h3>Activity Log</h3>
+    <div class="button-group">
+      <button class="add-btn" (click)="openLogModal()">+ Add Entry</button>
+      <button class="clear-btn" (click)="clearLog()">Clear Log</button>
+    </div>
+  </div>
+
+  <div class="log-content">
+    @if ((logEntries$ | async)?.length === 0) {
+      <div class="empty-log">
+        <p>No log entries yet. Click "Add Entry" to create one.</p>
+      </div>
+    } @else {
+      <div class="log-entries">
+        @for (entry of (logEntries$ | async) || []; track entry.id) {
+          <div class="log-entry">
+            <div class="entry-header">
+              <span class="entry-id">#{{ entry.id }}</span>
+              <span class="entry-timestamp">{{ entry.timestamp | date:'short' }}</span>
+            </div>
+            <div class="entry-message">{{ entry.message }}</div>
+          </div>
+        }
+      </div>
+    }
+  </div>
+</div>

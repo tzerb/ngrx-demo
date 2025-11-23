@@ -1,0 +1,28 @@
+<div class="modal-overlay" (click)="onClose()">
+  <div class="modal-content" (click)="$event.stopPropagation()">
+    <div class="modal-header">
+      <h2>Add Log Entry</h2>
+      <button class="close-btn" (click)="onClose()">&times;</button>
+    </div>
+
+    <div class="modal-body">
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea
+          id="message"
+          [(ngModel)]="message"
+          placeholder="Enter log message..."
+          rows="4"
+          autofocus
+        ></textarea>
+      </div>
+    </div>
+
+    <div class="modal-footer">
+      <button class="cancel-btn" (click)="onClose()">Cancel</button>
+      <button class="submit-btn" (click)="onSubmit()" [disabled]="!message.trim()">
+        Add Entry
+      </button>
+    </div>
+  </div>
+</div>
