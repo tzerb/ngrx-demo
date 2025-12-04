@@ -5,14 +5,15 @@
     <h3>The Count: {{ count$ | async }}</h3>
     @if (isEven$ | async) {
       <p class="info">The count is even</p>
-    } else {
+    } @else {
       <p class="info">The count is odd</p>
     }
     @if (isPositive$ | async) {
       <p class="info">The count is positive</p>
-    } else {
+    } @else {
       <p class="info">The count is negative</p>
     }
+  
   </div>
 
   <div class="button-group">
