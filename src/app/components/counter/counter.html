@@ -2,12 +2,16 @@
   <h2>NgRx Counter Example</h2>
 
   <div class="counter-display">
-    <h3>Count: {{ count$ | async }}</h3>
+    <h3>The Count: {{ count$ | async }}</h3>
     @if (isEven$ | async) {
       <p class="info">The count is even</p>
+    } else {
+      <p class="info">The count is odd</p>
     }
     @if (isPositive$ | async) {
       <p class="info">The count is positive</p>
+    } else {
+      <p class="info">The count is negative</p>
     }
   </div>
 
