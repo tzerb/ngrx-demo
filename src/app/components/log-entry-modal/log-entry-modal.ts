@@ -19,13 +19,13 @@ export class LogEntryModal {
   onSubmit() {
     if (this.message.trim()) {
       this.store.dispatch(LogActions.addLogEntry({ message: this.message.trim() }));
-      this.store.dispatch(UIActions.closeLogModal());
+      //this.store.dispatch(UIActions.closeLogModal());
       this.resetForm();
     }
   }
 
   onClose() {
-    this.store.dispatch(UIActions.closeLogModal());
+    //this.store.dispatch(UIActions.closeLogModal());
     this.resetForm();
   }
 
