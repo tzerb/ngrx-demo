@@ -23,4 +23,12 @@ describe('App', () => {
     const compiled = fixture.nativeElement as HTMLElement;
     expect(compiled.querySelector('h1')?.textContent).toContain('ngrx-demo');
   });
+
+  it('should display author name "Tim Zirbel"', () => {
+    const fixture = TestBed.createComponent(App);
+    fixture.detectChanges();
+    const compiled = fixture.nativeElement as HTMLElement;
+    const authorName = compiled.querySelector('.author-name');
+    expect(authorName?.textContent).toBe('Tim Zirbel');
+  });
 });
